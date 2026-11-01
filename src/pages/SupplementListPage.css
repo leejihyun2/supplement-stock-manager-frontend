@@ -1,0 +1,196 @@
+
+/* 모바일 화면 전체 */
+.app-shell {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 상단 헤더 */
+.app-header {
+  height: 72px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #17202e;
+}
+
+.back-icon {
+  display: flex;
+  align-items: center;
+  color: #596777;
+}
+
+.add-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0caf78;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 본문 */
+.page-content {
+  padding: 8px 13px 112px;
+}
+
+/* 총 등록된 영양제 카드 */
+.summary-card {
+  min-height: 82px;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #ebfaf3;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.summary-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d9f5e8;
+  color: #0caf78;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-label {
+  margin: 0 0 3px;
+  font-size: 12px;
+  color: #687587;
+}
+
+.summary-count {
+  margin: 0;
+  color: #049869;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* 영양제 카드 목록 */
+.supplement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.supplement-card {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 13px 13px 20px;
+  background: #ffffff;
+  border: 1px solid #edf0f3;
+  border-radius: 11px;
+  box-shadow: 0 3px 10px rgba(25, 40, 65, 0.045);
+}
+
+.supplement-info {
+  min-width: 0;
+}
+
+.supplement-info h2 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #18212e;
+}
+
+.supplement-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #8792a0;
+}
+
+/* 카드 오른쪽 */
+.supplement-right {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.stock-badge {
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* 14일 이내 */
+.stock-badge.danger {
+  background: #fff0f1;
+  color: #fa414c;
+}
+
+/* 15~30일 */
+.stock-badge.warning {
+  background: #fff6e8;
+  color: #f0930b;
+}
+
+/* 31일 이상 */
+.stock-badge.safe {
+  background: #e9f9f1;
+  color: #079866;
+}
+
+.chevron {
+  color: #9ca6b5;
+}
+
+/* 하단 네비게이션 */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  max-width: 430px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 7px 10px max(8px, env(safe-area-inset-bottom));
+  background: #ffffff;
+  border-top: 1px solid #edf0f2;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.035);
+}
+
+.nav-item {
+  height: 59px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #8190a1;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.nav-item.active {
+  background: #e8f9f1;
+  border-radius: 17px;
+  color: #079c6a;
+  font-weight: 700;
+}
