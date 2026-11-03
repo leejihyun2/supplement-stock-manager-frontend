@@ -1,0 +1,243 @@
+/* 상세 페이지 전체 */
+.detail-shell {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 상단 헤더 */
+.detail-header {
+  height: 72px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.detail-header h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #18212e;
+}
+
+.detail-back {
+  color: #657282;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.detail-content {
+  padding: 12px 14px 40px;
+}
+
+.detail-message {
+  padding: 25px 8px;
+  color: #667085;
+}
+
+/* 상세 정보 카드 */
+.detail-card {
+  background: white;
+  border: 1px solid #edf0f3;
+  border-radius: 15px;
+  padding: 17px;
+  box-shadow: 0 3px 12px rgba(25, 40, 65, 0.05);
+}
+
+/* 영양제 이름 영역 */
+.detail-product {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.detail-product-icon {
+  width: 57px;
+  height: 57px;
+  flex-shrink: 0;
+  background: #e2f8ed;
+  color: #09a875;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-product h2 {
+  font-size: 21px;
+  margin: 0 0 8px;
+  color: #18212e;
+}
+
+.detail-schedule {
+  background: #e7f9ef;
+  color: #069c6d;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 기본 수량 및 복용 정보 */
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.detail-stat {
+  min-width: 0;
+  min-height: 58px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  column-gap: 6px;
+  row-gap: 6px;
+  padding: 8px 4px;
+  font-size: 12px;
+  color: #6b7888;
+}
+
+.detail-stat svg {
+  color: #6a899f;
+  flex-shrink: 0;
+}
+
+.detail-stat strong {
+  margin-left: auto;
+  color: #202b3a;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* 소진일, 주문 추천 정보 */
+.detail-depletion {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.detail-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.detail-data-row > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6c7888;
+  flex-shrink: 0;
+}
+
+.detail-data-row strong {
+  color: #253143;
+  font-weight: 700;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.detail-data-row .detail-green {
+  color: #079a6b;
+}
+
+.detail-data-row .detail-warning {
+  color: #ed9213;
+}
+
+/* 구매 정보 */
+.detail-purchase {
+  padding-top: 10px;
+}
+
+/* 하단 기능 버튼 */
+.detail-actions {
+  margin-top: 14px;
+}
+
+.detail-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.detail-action-grid button {
+  min-height: 48px;
+  border: none;
+  border-radius: 9px;
+  background: #e8f9f1;
+  color: #089b6d;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.detail-action-grid .detail-purchase-button {
+  background: #0cab76;
+  color: white;
+}
+
+/* 아직 연결하지 않은 기능은 비활성화 */
+.detail-action-grid button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.detail-delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 10px;
+  border: 1px solid #ffd8db;
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #ee4a57;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.detail-delete-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 작은 모바일 화면 대응 */
+@media (max-width: 360px) {
+  .detail-card {
+    padding: 13px;
+  }
+
+  .detail-stat {
+    font-size: 11px;
+  }
+
+  .detail-stat strong {
+    font-size: 12px;
+  }
+
+  .detail-action-grid button {
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+
+
