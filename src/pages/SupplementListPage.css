@@ -194,3 +194,10 @@
   color: #079c6a;
   font-weight: 700;
 }
+
+/* 영양제 카드가 링크로 변경되어도 기존 디자인 유지 */
+.supplement-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ import {
   List,
   CalendarDays,
 } from "lucide-react";
+import { Link } from "react-router";
 
 import { getSupplements } from "../api/supplementApi";
 import type { Supplement } from "../types/supplement";
@@ -102,27 +103,29 @@ function SupplementListPage() {
         ) : (
           <section className="supplement-list">
             {supplements.map((supplement) => (
-              <article
-                className="supplement-card"
-                key={supplement.supplementId}
-              >
-                <div className="supplement-info">
-                  <h2>{supplement.supplementName}</h2>
-                  <p>현재 개수: {supplement.currentStock}정</p>
-                </div>
+               <Link
+                  // 클릭한 영양제의 ID를 주소에 포함
+                  to={`/supplements/${supplement.supplementId}`}
+                  className="supplement-card"
+                  key={supplement.supplementId}
+                >
+                  <div className="supplement-info">
+                    <h2>{supplement.supplementName}</h2>
+                    <p>현재 개수: {supplement.currentStock}정</p>
+                  </div>
 
-                <div className="supplement-right">
-                  <span
-                    className={`stock-badge ${getStockStatus(
-                      supplement.daysUntilDepletion
-                    )}`}
-                  >
-                    {supplement.daysUntilDepletion}일 후 소진
-                  </span>
+                  <div className="supplement-right">
+                    <span
+                      className={`stock-badge ${getStockStatus(
+                        supplement.daysUntilDepletion
+                      )}`}
+                    >
+                      {supplement.daysUntilDepletion}일 후 소진
+                    </span>
 
-                  <ChevronRight size={18} className="chevron" />
-                </div>
-              </article>
+                    <ChevronRight size={18} className="chevron" />
+                  </div>
+                </Link>
             ))}
           </section>
         )}
