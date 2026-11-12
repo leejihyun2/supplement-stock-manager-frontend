@@ -2,6 +2,7 @@ import type {
   Supplement,
   SupplementDetail,
   SupplementCreateRequest,
+  SupplementUpdateRequest,
 } from "../types/supplement";
 
 // 실제 Spring Boot 응답 데이터의 타입
@@ -115,6 +116,69 @@ export async function createSupplement(
   if (!response.ok) {
     throw new Error(
       `영양제 등록에 실패했습니다. (HTTP ${response.status})`
+    );
+  }
+}
+
+/**
+ * 영양제 정보 수정 API
+ *
+ * PUT /supplements/{supplementId}
+ *
+ * @param supplementId 수정할 영양제 ID
+ * @param request 수정할 영양제 정보
+ */
+export async function updateSupplement(
+  supplementId: number,
+  request: SupplementUpdateRequest
+): Promise<void> {
+
+  // Spring Boot 수정 API 호출
+  const response = await fetch(
+    `/api/supplements/${supplementId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      // 수정할 객체를 JSON 문자열로 변환
+      body: JSON.stringify(request),
+    }
+  );
+
+  // HTTP 오류 처리
+  if (!response.ok) {
+    throw new Error(
+      `영양제 수정에 실패했습니다. (HTTP ${response.status})`
+    );
+  }
+}
+
+
+/**
+ * 영양제 삭제 API
+ *
+ * DELETE /supplements/{supplementId}
+ *
+ * @param supplementId 삭제할 영양제 ID
+ */
+export async function deleteSupplement(
+  supplementId: number
+): Promise<void> {
+
+  // Spring Boot 삭제 API 호출
+  const response = await fetch(
+    `/api/supplements/${supplementId}`,
+    {
+      method: "DELETE",
+    }
+  );
+
+  // HTTP 오류 처리
+  if (!response.ok) {
+    throw new Error(
+      `영양제 삭제에 실패했습니다. (HTTP ${response.status})`
     );
   }
 }
