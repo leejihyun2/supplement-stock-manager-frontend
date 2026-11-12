@@ -1,0 +1,208 @@
+/* 영양제 등록 페이지 전체 */
+.create-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 상단 헤더 */
+.create-header {
+  height: 72px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.create-header h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #18212e;
+}
+
+.create-back {
+  display: flex;
+  color: #657282;
+  text-decoration: none;
+}
+
+/* 본문 */
+.create-content {
+  padding: 14px 14px 35px;
+}
+
+/* 소개 영역 */
+.create-intro {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 2px 18px;
+}
+
+.create-intro-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #e5f8ee;
+  color: #08a574;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.create-intro h2 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  color: #17212f;
+}
+
+.create-intro p {
+  margin: 0;
+  color: #8490a0;
+  font-size: 12px;
+}
+
+/* 입력 폼 카드 */
+.create-form-card {
+  padding: 8px 13px;
+  border: 1px solid #edf0f3;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(25, 40, 65, 0.05);
+}
+
+/* 각 입력 행 */
+.create-field {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 62px;
+  border-bottom: 1px solid #eef1f4;
+}
+
+.create-field:last-child {
+  border-bottom: none;
+}
+
+.create-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #273244;
+}
+
+.create-field label svg {
+  flex-shrink: 0;
+  color: #718298;
+}
+
+.create-field label b {
+  color: #eb5158;
+}
+
+/* 입력 필드 */
+.create-field input {
+  min-width: 0;
+  width: 100%;
+  height: 41px;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid #eef1f4;
+  background: #f8fafc;
+  color: #233043;
+  font-size: 13px;
+  outline: none;
+}
+
+.create-field input::placeholder {
+  color: #a9b2bd;
+}
+
+.create-field input:focus {
+  border-color: #15b985;
+  background: #ffffff;
+}
+
+/* 단위가 있는 숫자 입력 */
+.create-input-unit {
+  position: relative;
+  min-width: 0;
+}
+
+.create-input-unit input {
+  padding-right: 35px;
+  appearance: textfield;
+}
+
+.create-input-unit input::-webkit-inner-spin-button,
+.create-input-unit input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.create-input-unit span {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #9ba6b5;
+  pointer-events: none;
+}
+
+/* 등록 버튼 */
+.create-submit {
+  width: 100%;
+  height: 49px;
+  margin-top: 19px;
+  border: none;
+  border-radius: 10px;
+  background: #12b67e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.create-submit:hover {
+  background: #079b6a;
+}
+
+.create-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 오류 메시지 */
+.create-error {
+  margin: 15px 0 0;
+  color: #d63848;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* 작은 스마트폰 화면 대응 */
+@media (max-width: 360px) {
+  .create-field {
+    grid-template-columns: 119px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .create-field label {
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .create-form-card {
+    padding: 8px 10px;
+  }
+}
