@@ -201,3 +201,8 @@
   color: inherit;
   cursor: pointer;
 }
+
+.add-icon {
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -75,9 +75,13 @@ function SupplementListPage() {
 
         <h1>영양제 목록</h1>
 
-        <span className="add-icon">
+        <Link
+          to="/supplements/new"
+          className="add-icon"
+          aria-label="영양제 등록"
+        >
           <Plus size={22} />
-        </span>
+        </Link>
       </header>
 
       <main className="page-content">

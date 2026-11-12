@@ -1,6 +1,7 @@
 import type {
   Supplement,
   SupplementDetail,
+  SupplementCreateRequest,
 } from "../types/supplement";
 
 // 실제 Spring Boot 응답 데이터의 타입
@@ -89,4 +90,31 @@ export async function getSupplementDetail(
   }
 
   return data as SupplementDetail;
+}
+
+/**
+ * 영양제 최초 등록
+ * POST /supplements
+ */
+export async function createSupplement(
+  request: SupplementCreateRequest
+): Promise<void> {
+  const response = await fetch("/api/supplements", {
+    method: "POST",
+
+    // JSON 형식으로 데이터를 전달
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    // TypeScript 객체를 JSON 문자열로 변환
+    body: JSON.stringify(request),
+  });
+
+  // 200~299 이외의 상태 코드가 반환되면 오류 처리
+  if (!response.ok) {
+    throw new Error(
+      `영양제 등록에 실패했습니다. (HTTP ${response.status})`
+    );
+  }
 }

@@ -2,6 +2,7 @@ import { Navigate, Routes, Route } from "react-router";
 
 import SupplementListPage from "./pages/SupplementListPage";
 import SupplementDetailPage from "./pages/SupplementDetailPage";
+import SupplementCreatePage from "./pages/SupplementCreatePage";
 
 function App() {
   return (
@@ -16,6 +17,12 @@ function App() {
       <Route
         path="/supplements"
         element={<SupplementListPage />}
+      />
+
+      {/* 영양제 최초 등록 */}
+      <Route
+        path="/supplements/new"
+        element={<SupplementCreatePage />}
       />
 
       {/* 영양제 상세 화면 */}
