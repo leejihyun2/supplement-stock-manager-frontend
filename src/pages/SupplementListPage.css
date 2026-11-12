@@ -206,3 +206,29 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+/* 정보 수정 버튼 - Link이므로 버튼처럼 보이도록 설정 */
+.detail-action-grid .detail-edit-link {
+  min-height: 48px;
+  border-radius: 9px;
+  background: #e8f9f1;
+  color: #089b6d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 삭제 실패 시 오류 메시지 */
+.detail-delete-error {
+  margin-top: 12px;
+  color: #d63848;
+  font-size: 13px;
+  line-height: 1.5;
+}

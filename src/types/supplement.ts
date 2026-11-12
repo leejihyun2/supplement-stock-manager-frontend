@@ -44,3 +44,7 @@ export type SupplementCreateRequest = {
   servingsPerDay: number;       // 하루 섭취 횟수
   intakeSchedule: string;       // 섭취 요일
 };
+
+// 영양제 수정 요청 데이터
+// 현재 등록 API와 수정 API의 요청 필드가 동일하므로 재사용
+export type SupplementUpdateRequest = SupplementCreateRequest;
