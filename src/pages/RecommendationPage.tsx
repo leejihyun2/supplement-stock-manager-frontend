@@ -253,39 +253,7 @@ function RecommendationPage() {
         </section>
       </main>
 
-      {/* 하단 메뉴 */}
-      <nav
-        className="recommendation-bottom-nav"
-        aria-label="하단 메뉴"
-      >
-        {/* 홈 화면은 이후 구현 */}
-        <span className="recommendation-nav-item nav-disabled">
-          <House size={23} />
-          <span>홈</span>
-        </span>
-
-        <Link
-          to="/intake"
-          className="recommendation-nav-item"
-        >
-          <SquareCheckBig size={23} />
-          <span>오늘 체크</span>
-        </Link>
-
-        <Link
-          to="/supplements"
-          className="recommendation-nav-item"
-        >
-          <List size={23} />
-          <span>영양제 목록</span>
-        </Link>
-
-        {/* 캘린더 화면은 이후 구현 */}
-        <span className="recommendation-nav-item nav-disabled">
-          <CalendarDays size={23} />
-          <span>캘린더</span>
-        </span>
-      </nav>
+  
     </div>
   );
 }

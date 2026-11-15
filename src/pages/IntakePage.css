@@ -246,46 +246,7 @@
   font-weight: 600;
 }
 
-/* 하단 네비게이션 */
-.intake-bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 430px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  padding: 7px 10px max(8px, env(safe-area-inset-bottom));
-  background: #ffffff;
-  border-top: 1px solid #edf0f2;
-  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.035);
-}
 
-.intake-nav-item {
-  height: 59px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  color: #8190a1;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.intake-nav-item.active {
-  background: #e8f9f1;
-  border-radius: 17px;
-  color: #079c6a;
-  font-weight: 700;
-}
-
-.intake-nav-disabled {
-  opacity: 0.55;
-}
 
 /* 작은 모바일 화면 */
 @media (max-width: 360px) {

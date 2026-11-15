@@ -1,0 +1,71 @@
+
+/* 모든 페이지에서 공유하는 하단 네비게이션 */
+.app-bottom-nav {
+  position: fixed;
+
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+
+  padding: 7px 10px max(8px, env(safe-area-inset-bottom));
+
+  background: #ffffff;
+  border-top: 1px solid #edf0f2;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.035);
+
+  /* 페이지 콘텐츠 위에 표시 */
+  z-index: 100;
+}
+
+/* 메뉴 공통 스타일 */
+.app-nav-item {
+  min-width: 0;
+  min-height: 59px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  border-radius: 17px;
+
+  color: #8190a1;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+/* 현재 선택된 메뉴 */
+.app-nav-item.active {
+  background: #e8f9f1;
+  color: #079c6a;
+  font-weight: 700;
+}
+
+/* 마우스를 올렸을 때 */
+.app-nav-item:not(.active):not(.app-nav-disabled):hover {
+  background: #f3f7f5;
+}
+
+/* 아직 구현되지 않은 메뉴 */
+.app-nav-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* 키보드 접근성 */
+.app-nav-item:focus-visible {
+  outline: 2px solid #0caf78;
+  outline-offset: 2px;
+}
