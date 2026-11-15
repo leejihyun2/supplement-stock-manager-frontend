@@ -11,10 +11,10 @@ import {
 import "./BottomNavigation.css";
 
 /**
- * 공통 하단 네비게이션
+ * 모든 주요 페이지에서 사용하는 공통 네비게이션
  *
- * NavLink는 현재 URL과 일치하는 메뉴를
- * 자동으로 활성화할 수 있다.
+ * NavLink가 현재 URL을 확인하여
+ * active 클래스를 자동 적용한다.
  */
 function BottomNavigation() {
   return (
@@ -22,14 +22,18 @@ function BottomNavigation() {
       className="app-bottom-nav"
       aria-label="하단 네비게이션"
     >
-      {/* 홈: 아직 구현하지 않았으므로 비활성화 */}
-      <span
-        className="app-nav-item app-nav-disabled"
-        aria-disabled="true"
+
+      {/* 홈 대시보드 */}
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+          `app-nav-item ${isActive ? "active" : ""}`
+        }
       >
         <House size={23} />
         <span>홈</span>
-      </span>
+      </NavLink>
 
       {/* 오늘 복용 체크 */}
       <NavLink
@@ -64,6 +68,7 @@ function BottomNavigation() {
         <CalendarDays size={23} />
         <span>캘린더</span>
       </NavLink>
+
     </nav>
   );
 }
