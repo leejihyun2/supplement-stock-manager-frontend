@@ -238,3 +238,30 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+/* 이번 주문 추천 페이지 이동 버튼 */
+.recommendation-entry {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 58px;
+  margin-top: 13px;
+  padding: 14px;
+
+  background: #fff8e9;
+  border-radius: 10px;
+
+  color: #364152;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.recommendation-entry span {
+  flex: 1;
+}
+
+.recommendation-entry:hover {
+  background: #fff2d8;
+}

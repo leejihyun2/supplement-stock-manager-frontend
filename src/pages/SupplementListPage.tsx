@@ -8,12 +8,14 @@ import {
   SquareCheckBig,
   List,
   CalendarDays,
+  Star,
 } from "lucide-react";
 import { Link } from "react-router";
 
 import { getSupplements } from "../api/supplementApi";
 import type { Supplement } from "../types/supplement";
 import "./SupplementListPage.css";
+
 
 // 소진일까지 남은 일수에 따라 배지 색상 결정
 function getStockStatus(days: number): string {
@@ -133,6 +135,18 @@ function SupplementListPage() {
             ))}
           </section>
         )}
+
+        {/* 이번 주문 추천 화면 이동 */}
+          <Link
+            to="/recommendations"
+            className="recommendation-entry"
+          >
+            <Star size={21} fill="#f8ba32" color="#f8ba32" />
+
+            <span>2주 이내 소진 예정 영양제 확인</span>
+
+            <ChevronRight size={19} />
+          </Link>
       </main>
 
       {/* 하단 네비게이션 - 이동 기능은 이후 구현 */}
