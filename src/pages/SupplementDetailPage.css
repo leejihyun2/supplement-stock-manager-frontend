@@ -240,4 +240,55 @@
   }
 }
 
+/* 기능 실행 성공 메시지 */
+.detail-action-notice {
+  margin: 14px 0 0;
+  padding: 12px;
+  border-radius: 9px;
+  background: #e9f9f1;
+  color: #07895f;
+  font-size: 13px;
+  font-weight: 600;
+}
 
+/* 기능 실행 오류 */
+.detail-action-error {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #fff2f2;
+  color: #d63848;
+  font-size: 13px;
+}
+
+.detail-action-error p {
+  margin: 0 0 10px;
+}
+
+.detail-action-error button {
+  padding: 7px 11px;
+  border: 1px solid #f4c6ca;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #c33647;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* 상세 정보 재조회 중 */
+.detail-refreshing {
+  margin: 12px 0;
+  color: #7b8999;
+  font-size: 12px;
+}
+
+/* 활성 버튼 */
+.detail-action-grid button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* 수정 링크 비활성화 */
+.detail-edit-link[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
