@@ -1,34 +1,40 @@
-
 import {
-  Navigate,
   Routes,
   Route,
   useLocation,
 } from "react-router";
 
+// 영양제 기본 관리
 import SupplementListPage from "./pages/SupplementListPage";
 import SupplementDetailPage from "./pages/SupplementDetailPage";
 import SupplementCreatePage from "./pages/SupplementCreatePage";
 import SupplementUpdatePage from "./pages/SupplementUpdatePage";
 
+// 복용 관리
 import IntakePage from "./pages/IntakePage";
+
+// 주문 추천
 import RecommendationPage from "./pages/RecommendationPage";
+
+// 소진일 캘린더
 import CalendarPage from "./pages/CalendarPage";
+
+// 홈 대시보드
+import HomePage from "./pages/HomePage";
 
 // 공통 하단 네비게이션
 import BottomNavigation from "./components/BottomNavigation";
 
 function App() {
-  // 현재 페이지 경로
   const location = useLocation();
 
   /**
-   * 네비게이션을 표시할 페이지
+   * 공통 하단 네비게이션을 표시할 페이지
    *
-   * 등록·수정·상세 페이지에서는
-   * 기존 디자인에 맞춰 표시하지 않는다.
+   * 상세·등록·수정 화면에서는 숨긴다.
    */
   const navigationPages = [
+    "/",
     "/supplements",
     "/intake",
     "/recommendations",
@@ -41,50 +47,57 @@ function App() {
 
   return (
     <>
-      {/* 화면별 라우팅 */}
       <Routes>
+        {/* 홈 대시보드 */}
         <Route
           path="/"
-          element={<Navigate to="/supplements" replace />}
+          element={<HomePage />}
         />
 
+        {/* 영양제 목록 */}
         <Route
           path="/supplements"
           element={<SupplementListPage />}
         />
 
+        {/* 영양제 최초 등록 */}
         <Route
           path="/supplements/new"
           element={<SupplementCreatePage />}
         />
 
+        {/* 영양제 수정 */}
         <Route
           path="/supplements/:id/edit"
           element={<SupplementUpdatePage />}
         />
 
+        {/* 영양제 상세 */}
         <Route
           path="/supplements/:id"
           element={<SupplementDetailPage />}
         />
 
+        {/* 오늘 복용 체크 */}
         <Route
           path="/intake"
           element={<IntakePage />}
         />
 
+        {/* 이번 주문 추천 */}
         <Route
           path="/recommendations"
           element={<RecommendationPage />}
         />
 
+        {/* 소진일 캘린더 */}
         <Route
           path="/calendar"
           element={<CalendarPage />}
         />
       </Routes>
 
-      {/* 네비게이션은 여기서 딱 한 번만 렌더링 */}
+      {/* 모든 주요 화면에서 공통 네비게이션 사용 */}
       {showNavigation && <BottomNavigation />}
     </>
   );

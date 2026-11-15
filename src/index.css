@@ -22,3 +22,7 @@ body {
 button, input {
   font: inherit;
 }
+/* 페이지별 스크롤바 유무에 따른 가로 위치 변동 방지 */
+html {
+  scrollbar-gutter: stable both-edges;
+}
