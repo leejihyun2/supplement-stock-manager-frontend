@@ -4,6 +4,7 @@ import SupplementListPage from "./pages/SupplementListPage";
 import SupplementDetailPage from "./pages/SupplementDetailPage";
 import SupplementCreatePage from "./pages/SupplementCreatePage";
 import SupplementUpdatePage from "./pages/SupplementUpdatePage";
+import IntakePage from "./pages/IntakePage";
 
 function App() {
   return (
@@ -36,6 +37,12 @@ function App() {
       <Route
         path="/supplements/:id"
         element={<SupplementDetailPage />}
+      />
+    
+    {/* 오늘 복용 체크 */}
+      <Route
+        path="/intake"
+        element={<IntakePage />}
       />
     </Routes>
   );

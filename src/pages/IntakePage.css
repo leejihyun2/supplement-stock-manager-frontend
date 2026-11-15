@@ -1,0 +1,305 @@
+
+/* 오늘 복용 체크 페이지 */
+.intake-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 헤더 */
+.intake-header {
+  height: 72px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.intake-header h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #17212e;
+}
+
+.intake-back {
+  color: #657282;
+  display: flex;
+  text-decoration: none;
+}
+
+/* 본문 */
+.intake-content {
+  padding: 12px 14px 115px;
+}
+
+/* 날짜 표시 */
+.intake-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0 24px;
+  color: #64748b;
+}
+
+.intake-date h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #202b3a;
+}
+
+/* 복용 완료 현황 */
+.intake-summary {
+  background: #ebfaf3;
+  border-radius: 13px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.intake-summary-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intake-summary-label {
+  color: #697b87;
+  font-size: 12px;
+}
+
+.intake-summary h3 {
+  margin: 7px 0 0;
+  color: #079968;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.intake-summary h3 span {
+  color: #728094;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.intake-summary-icon {
+  color: #0ba976;
+}
+
+/* 완료율 표시 */
+.intake-progress {
+  height: 8px;
+  margin-top: 18px;
+  background: #d2e9dd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.intake-progress-fill {
+  height: 100%;
+  background: #0caf78;
+  border-radius: 20px;
+  transition: width 0.25s ease;
+}
+
+/* 체크리스트 카드 */
+.intake-list-card {
+  border: 1px solid #edf0f3;
+  border-radius: 14px;
+  background: white;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(25, 40, 65, 0.045);
+}
+
+.intake-list-title {
+  margin: 0 0 13px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #243044;
+}
+
+/* 체크리스트 항목 */
+.intake-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.intake-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 55px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #f0f2f5;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 체크 완료한 항목 */
+.intake-item.checked {
+  background: #ecfaf3;
+  border-color: #e0f4e9;
+}
+
+/* 체크박스 */
+.intake-item input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 2px solid #bcc5cf;
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.intake-item input[type="checkbox"]:checked {
+  background: #0caf78;
+  border-color: #0caf78;
+}
+
+.intake-item input[type="checkbox"]:checked::after {
+  content: "";
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+.intake-item input:disabled {
+  cursor: not-allowed;
+}
+
+.intake-item:has(input:disabled) {
+  cursor: default;
+}
+
+/* 영양제 정보 */
+.intake-item-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #243044;
+}
+
+.intake-item-quantity {
+  color: #7b8999;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.intake-item-loading {
+  font-size: 11px;
+  color: #089b6d;
+}
+
+/* 오류 및 빈 목록 */
+.intake-message {
+  padding: 15px 0;
+  text-align: center;
+  color: #8490a0;
+  font-size: 13px;
+}
+
+.intake-error {
+  margin-top: 16px;
+  padding: 13px;
+  background: #fff2f2;
+  border-radius: 9px;
+  color: #d63848;
+  font-size: 13px;
+}
+
+.intake-error p {
+  margin: 0 0 10px;
+}
+
+.intake-error button {
+  padding: 8px 12px;
+  border: 1px solid #f6c7cb;
+  background: white;
+  color: #bd3343;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.intake-error button:disabled {
+  opacity: 0.5;
+}
+
+/* 모두 복용 완료 */
+.intake-complete-message {
+  margin-top: 18px;
+  text-align: center;
+  color: #079968;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 하단 네비게이션 */
+.intake-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 7px 10px max(8px, env(safe-area-inset-bottom));
+  background: #ffffff;
+  border-top: 1px solid #edf0f2;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.035);
+}
+
+.intake-nav-item {
+  height: 59px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #8190a1;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.intake-nav-item.active {
+  background: #e8f9f1;
+  border-radius: 17px;
+  color: #079c6a;
+  font-weight: 700;
+}
+
+.intake-nav-disabled {
+  opacity: 0.55;
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 360px) {
+  .intake-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .intake-item {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .intake-item-name {
+    font-size: 13px;
+  }
+}
