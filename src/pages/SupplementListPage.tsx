@@ -142,10 +142,10 @@ function SupplementListPage() {
           <span>홈</span>
         </div>
 
-        <div className="nav-item">
-          <SquareCheckBig size={23} />
-          <span>오늘 체크</span>
-        </div>
+      <Link to="/intake" className="nav-item">
+        <SquareCheckBig size={23} />
+        <span>오늘 체크</span>
+      </Link>
 
         <div className="nav-item active" aria-current="page">
           <List size={23} />

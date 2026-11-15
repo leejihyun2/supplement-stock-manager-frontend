@@ -232,3 +232,9 @@
   font-size: 13px;
   line-height: 1.5;
 }
+
+/* 하단 메뉴 링크 스타일 유지 */
+.bottom-nav .nav-item {
+  text-decoration: none;
+  cursor: pointer;
+}
