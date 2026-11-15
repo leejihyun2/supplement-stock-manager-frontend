@@ -182,3 +182,41 @@ export async function deleteSupplement(
     );
   }
 }
+
+/**
+ * 새 통 시작 API
+ *
+ * POST /supplements/{supplementId}/restock
+ *
+ * 기존 설계상 Request Body 없음.
+ * 실제 Controller 매핑 확인 필요.
+ */
+export async function restockSupplement(
+  supplementId: number
+): Promise<void> {
+
+  const response = await fetch(
+    `/api/supplements/${supplementId}/restock`,
+    {
+      method: "POST",
+    }
+  );
+
+  // 미개봉 통이 없는 경우
+  if (response.status === 409) {
+    throw new Error(
+      "미개봉 영양제가 없어 새 통을 시작할 수 없습니다."
+    );
+  }
+
+  // 존재하지 않는 영양제
+  if (response.status === 404) {
+    throw new Error("해당 영양제를 찾을 수 없습니다.");
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      `새 통 시작 실패 (HTTP ${response.status})`
+    );
+  }
+}
