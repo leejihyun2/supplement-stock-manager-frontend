@@ -149,28 +149,7 @@ function SupplementListPage() {
           </Link>
       </main>
 
-      {/* 하단 네비게이션 - 이동 기능은 이후 구현 */}
-      <nav className="bottom-nav" aria-label="하단 메뉴">
-        <div className="nav-item">
-          <House size={23} />
-          <span>홈</span>
-        </div>
-
-      <Link to="/intake" className="nav-item">
-        <SquareCheckBig size={23} />
-        <span>오늘 체크</span>
-      </Link>
-
-        <div className="nav-item active" aria-current="page">
-          <List size={23} />
-          <span>영양제 목록</span>
-        </div>
-
-        <div className="nav-item">
-          <CalendarDays size={23} />
-          <span>캘린더</span>
-        </div>
-      </nav>
+      
     </div>
   );
 }

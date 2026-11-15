@@ -1,58 +1,92 @@
-import { Navigate, Routes, Route } from "react-router";
+
+import {
+  Navigate,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router";
 
 import SupplementListPage from "./pages/SupplementListPage";
 import SupplementDetailPage from "./pages/SupplementDetailPage";
 import SupplementCreatePage from "./pages/SupplementCreatePage";
 import SupplementUpdatePage from "./pages/SupplementUpdatePage";
+
 import IntakePage from "./pages/IntakePage";
 import RecommendationPage from "./pages/RecommendationPage";
+import CalendarPage from "./pages/CalendarPage";
+
+// 공통 하단 네비게이션
+import BottomNavigation from "./components/BottomNavigation";
 
 function App() {
+  // 현재 페이지 경로
+  const location = useLocation();
+
+  /**
+   * 네비게이션을 표시할 페이지
+   *
+   * 등록·수정·상세 페이지에서는
+   * 기존 디자인에 맞춰 표시하지 않는다.
+   */
+  const navigationPages = [
+    "/supplements",
+    "/intake",
+    "/recommendations",
+    "/calendar",
+  ];
+
+  const showNavigation = navigationPages.includes(
+    location.pathname
+  );
+
   return (
-    <Routes>
-      {/* 기본화면*/}
-      <Route
-        path="/"
-        element={<Navigate to="/supplements" replace />}
-      />
+    <>
+      {/* 화면별 라우팅 */}
+      <Routes>
+        <Route
+          path="/"
+          element={<Navigate to="/supplements" replace />}
+        />
 
-      {/* 영양제 목록 화면 */}
-      <Route
-        path="/supplements"
-        element={<SupplementListPage />}
-      />
+        <Route
+          path="/supplements"
+          element={<SupplementListPage />}
+        />
 
-      {/* 영양제 최초 등록 */}
-      <Route
-        path="/supplements/new"
-        element={<SupplementCreatePage />}
-      />
+        <Route
+          path="/supplements/new"
+          element={<SupplementCreatePage />}
+        />
 
-      {/* 영양제 수정 */}
-      <Route
-        path="/supplements/:id/edit"
-        element={<SupplementUpdatePage />}
-      />
+        <Route
+          path="/supplements/:id/edit"
+          element={<SupplementUpdatePage />}
+        />
 
-      {/* 영양제 상세 화면 */}
-      <Route
-        path="/supplements/:id"
-        element={<SupplementDetailPage />}
-      />
-    
-    {/* 오늘 복용 체크 */}
-      <Route
-        path="/intake"
-        element={<IntakePage />}
-      />
+        <Route
+          path="/supplements/:id"
+          element={<SupplementDetailPage />}
+        />
 
-      {/* 이번 주문 추천 */}
-      <Route
-        path="/recommendations"
-        element={<RecommendationPage />}
-      />
-      
-    </Routes>
+        <Route
+          path="/intake"
+          element={<IntakePage />}
+        />
+
+        <Route
+          path="/recommendations"
+          element={<RecommendationPage />}
+        />
+
+        <Route
+          path="/calendar"
+          element={<CalendarPage />}
+        />
+      </Routes>
+
+      {/* 네비게이션은 여기서 딱 한 번만 렌더링 */}
+      {showNavigation && <BottomNavigation />}
+    </>
   );
 }
 

@@ -1,0 +1,355 @@
+
+/* 소진일 캘린더 페이지 */
+.calendar-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 상단 헤더 */
+.calendar-header {
+  height: 72px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.calendar-header h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #18212e;
+}
+
+.calendar-back {
+  display: flex;
+  align-items: center;
+  color: #657282;
+  text-decoration: none;
+}
+
+/* 본문 */
+.calendar-content {
+  padding: 10px 14px 115px;
+}
+
+/* 이전 달 / 다음 달 선택 */
+.calendar-month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 21px;
+}
+
+.calendar-month-selector h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.calendar-month-selector button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  color: #66758a;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.calendar-month-selector button:hover {
+  background: #f3f7f5;
+}
+
+/* 달력 전체 */
+.calendar-panel {
+  background: white;
+  border: 1px solid #edf0f3;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(25, 40, 65, 0.04);
+}
+
+/* 요일 */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  background: #f8fafc;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.calendar-weekdays div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  color: #687587;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.calendar-weekdays .sunday {
+  color: #ee6870;
+}
+
+.calendar-weekdays .saturday {
+  color: #5897d6;
+}
+
+/* 날짜 격자 */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+/* 날짜 한 칸 */
+.calendar-day {
+  min-width: 0;
+  min-height: 59px;
+  padding: 8px 2px 5px;
+  border: none;
+  border-right: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+
+  color: #293344;
+  cursor: pointer;
+}
+
+.calendar-day:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-day:hover {
+  background: #f2faf6;
+}
+
+/* 날짜 숫자 */
+.calendar-day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 이전 달·다음 달 날짜 */
+.calendar-day.other-month {
+  color: #c7cdd6;
+  background: #fcfcfd;
+}
+
+/* 오늘 날짜 */
+.calendar-day.today .calendar-day-number {
+  border: 1px solid #0caf78;
+  border-radius: 50%;
+  color: #079c6c;
+}
+
+/* 선택한 날짜 */
+.calendar-day.selected {
+  background: #ecfaf3;
+}
+
+.calendar-day.selected .calendar-day-number {
+  background: #0caf78;
+  border: 1px solid #0caf78;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+/* 소진 예정 영양제 표시 */
+.calendar-event-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3px;
+  min-height: 7px;
+}
+
+.calendar-event-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.calendar-extra-events {
+  font-size: 9px;
+  color: #718096;
+  line-height: 1;
+}
+
+/* 선택 날짜의 소진 예정 목록 */
+.calendar-depletion-card {
+  margin-top: 17px;
+  padding: 15px 13px;
+  background: #ffffff;
+  border: 1px solid #edf0f3;
+  border-radius: 13px;
+  box-shadow: 0 4px 14px rgba(25, 40, 65, 0.04);
+}
+
+/* 목록 헤더 */
+.calendar-depletion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 13px;
+}
+
+.calendar-depletion-header > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #09a574;
+}
+
+.calendar-depletion-header h3 {
+  margin: 0;
+  color: #253143;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.calendar-depletion-header > span {
+  padding: 5px 9px;
+  background: #e9f9f1;
+  border-radius: 20px;
+  color: #079c6c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 소진 영양제 목록 */
+.calendar-depletion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-depletion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 61px;
+  padding: 11px 5px;
+  border-top: 1px solid #edf0f3;
+  text-decoration: none;
+  color: inherit;
+}
+
+.calendar-item-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.calendar-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.calendar-item-info strong {
+  color: #243044;
+  font-size: 14px;
+}
+
+.calendar-item-info span {
+  color: #8a95a4;
+  font-size: 11px;
+}
+
+.calendar-depletion-item > svg {
+  color: #9ba7b6;
+}
+
+/* 소진 예정 영양제가 없는 날짜 */
+.calendar-message {
+  padding: 24px 6px;
+  margin: 0;
+  border-top: 1px solid #edf0f3;
+  text-align: center;
+  color: #8a95a4;
+  font-size: 12px;
+}
+
+/* API 오류 */
+.calendar-error {
+  padding: 15px;
+  background: #fff2f2;
+  border-radius: 9px;
+  color: #d63848;
+}
+
+.calendar-error p {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.calendar-error button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid #f4c6ca;
+  border-radius: 7px;
+  background: white;
+  color: #c33647;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* 안내 문구 */
+.calendar-footer-note {
+  margin-top: 15px;
+  padding: 0 5px;
+  text-align: center;
+  color: #97a2af;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+
+/* 모바일 360px 대응 */
+@media (max-width: 360px) {
+  .calendar-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .calendar-day {
+    min-height: 54px;
+    gap: 4px;
+  }
+
+  .calendar-day-number {
+    font-size: 11px;
+  }
+
+  .calendar-depletion-card {
+    padding: 13px 10px;
+  }
+}

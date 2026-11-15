@@ -340,39 +340,7 @@ function IntakePage() {
           )}
       </main>
 
-      {/* 하단 네비게이션 */}
-      <nav
-        className="intake-bottom-nav"
-        aria-label="하단 메뉴"
-      >
-        {/* 홈 화면은 이후 구현 */}
-        <span className="intake-nav-item intake-nav-disabled">
-          <House size={23} />
-          <span>홈</span>
-        </span>
-
-        <span
-          className="intake-nav-item active"
-          aria-current="page"
-        >
-          <SquareCheckBig size={23} />
-          <span>오늘 체크</span>
-        </span>
-
-        <Link
-          to="/supplements"
-          className="intake-nav-item"
-        >
-          <List size={23} />
-          <span>영양제 목록</span>
-        </Link>
-
-        {/* 캘린더 화면은 이후 구현 */}
-        <span className="intake-nav-item intake-nav-disabled">
-          <CalendarDays size={23} />
-          <span>캘린더</span>
-        </span>
-      </nav>
+     
     </div>
   );
 }
