@@ -5,6 +5,7 @@ import SupplementDetailPage from "./pages/SupplementDetailPage";
 import SupplementCreatePage from "./pages/SupplementCreatePage";
 import SupplementUpdatePage from "./pages/SupplementUpdatePage";
 import IntakePage from "./pages/IntakePage";
+import RecommendationPage from "./pages/RecommendationPage";
 
 function App() {
   return (
@@ -44,6 +45,13 @@ function App() {
         path="/intake"
         element={<IntakePage />}
       />
+
+      {/* 이번 주문 추천 */}
+      <Route
+        path="/recommendations"
+        element={<RecommendationPage />}
+      />
+      
     </Routes>
   );
 }
