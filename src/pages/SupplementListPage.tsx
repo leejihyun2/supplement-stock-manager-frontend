@@ -71,9 +71,13 @@ function SupplementListPage() {
     <div className="app-shell">
       {/* 상단 헤더 */}
       <header className="app-header">
-        <span className="back-icon">
+        <Link
+          to="/"
+          className="detail-back"
+          aria-label="홈으로 돌아가기"
+        >
           <ArrowLeft size={24} />
-        </span>
+        </Link>
 
         <h1>영양제 목록</h1>
 
