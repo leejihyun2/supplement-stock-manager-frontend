@@ -118,9 +118,9 @@ function RecommendationPage() {
       {/* 상단 헤더 */}
       <header className="recommendation-header">
         <Link
-          to="/supplements"
+          to="/"
           className="recommendation-back"
-          aria-label="영양제 목록으로 돌아가기"
+          aria-label="홈으로 돌아가기"
         >
           <ArrowLeft size={24} />
         </Link>

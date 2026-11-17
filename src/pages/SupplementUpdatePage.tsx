@@ -189,9 +189,9 @@ function SupplementUpdatePage() {
       {/* 상단 헤더 */}
       <header className="create-header">
         <Link
-          to={`/supplements/${id}`}
-          className="create-back"
-          aria-label="영양제 상세 화면으로 돌아가기"
+          to="/"
+          className="detail-back"
+          aria-label="홈으로 돌아가기"
         >
           <ArrowLeft size={24} />
         </Link>
